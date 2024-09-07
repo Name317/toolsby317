@@ -3,6 +3,13 @@
 <head>
     <meta charset = "UTF-8">
     <title>三幺七的工具网站</title>
+</head>
+<body>
+    <h1>这里是三幺七的工具网站！</h1>
+    <hr>
+    <h2>取色器</h2>
+    <input type="color" id="colorPicker">
+    <p id="colorValues"></p>
     <script>
         document.getElementById('colorPicker').addEventListener('input', function() {
         var color = this.value;
@@ -14,12 +21,5 @@
         document.getElementById('colorValues').textContent = `R: ${rgb.r}, G: ${rgb.g}, B: ${rgb.b}`;
         });
     </script>
-</head>
-<body>
-    <h1>这里是三幺七的工具网站！</h1>
-    <hr>
-    <h2>取色器</h2>
-    <input type="color" id="colorPicker">
-    <p id="colorValues"></p>
 </body>
 </html>
