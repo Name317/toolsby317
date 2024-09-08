@@ -9,7 +9,7 @@
     <hr>
     <h2>显示彩色字</h2>
     <h3>内容：</h3>
-    <input type="text" id="textInput" placeholder="Enter text">
+    <input type="text" id="textInput" placeholder="请输入显示的内容（不填不会显示文字）">
     <h3>颜色：</h3>
     <input type="color" id="colorPicker">
     <br>
@@ -22,7 +22,7 @@
           var colorPicker = document.getElementById('colorPicker').value;
           var textInput = document.getElementById('textInput').value;
           var rgb = hexToRgb(colorPicker);
-          var mergedString = `R: ${rgb.r}, G: ${rgb.g}, B: ${rgb.b} - Text: ${textInput}`;
+          var mergedString = `https://name317.github.io/crunweb/?mode=text&text=${textInput}&color=rgb(${rgb.r},${rgb.g},${rgb.b})`;
           document.getElementById('result').textContent = mergedString;
         }
         function hexToRgb(hex) {
