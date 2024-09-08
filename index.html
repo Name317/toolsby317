@@ -9,29 +9,30 @@
     <hr>
     <h2>显示彩色字</h2>
     <h3>内容：</h3>
-    <input type="text" id="myInput">
-    <h3>颜色</h3>
+    <input type="text" id="textInput" placeholder="Enter text">
+    <h3>颜色：</h3>
     <input type="color" id="colorPicker">
     <br>
     <br>
-    <button onclick="getInputValue()">获取内容</button>
-    <code id="colorValues"></code>
+    <button onclick="displayMergedString()">获取网址</button>
+    <div id="result"></div>
     <hr>
     <script>
-        document.getElementById('colorPicker').addEventListener('input', function() {
-          var color = this.value;
-          var rgb = {
-              r: Number('0x' + color.substring(1, 3)),
-              g: Number('0x' + color.substring(3, 5)),
-              b: Number('0x' + color.substring(5, 7))
-          };
-          var inputVal = document.getElementById('myInput').value;
-        });
-        function getInputValue() {
-          inputVal = document.getElementById('myInput').value;
-          rgb = document.getElementById('colorPicker').rgb;
-          document.getElementById('colorValues').textContent = `https://name317.github.io/crunweb/?mode=text&text=${inputVal}&color=rgb(${rgb.r},${rgb.g},${rgb.b})`;
-       }
+        function displayMergedString() {
+          var colorPicker = document.getElementById('colorPicker').value;
+          var textInput = document.getElementById('textInput').value;
+          var rgb = hexToRgb(colorPicker);
+          var mergedString = `R: ${rgb.r}, G: ${rgb.g}, B: ${rgb.b} - Text: ${textInput}`;
+          document.getElementById('result').textContent = mergedString;
+        }
+        function hexToRgb(hex) {
+          var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+          return result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16)
+          } : null;
+        }
     </script>
 </body>
 </html>
