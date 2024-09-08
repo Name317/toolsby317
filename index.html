@@ -22,6 +22,18 @@
     <hr>
     <!-- 按钮 -->
     <h2>按钮控件</h2>
+    <select id="amySelect">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+    </select>
+    <input type="text" id="ainput1" placeholder="按钮名称">
+    <br>
+    <input type="text" id="ainput2" placeholder="不能含有 & # = ?">
+    <br>
+    <button onclick="mergeContent()">Merge</button>
+    <div id="resulta"></div>
+    <hr>
     <!-- 所有代码 -->
     <script>
         function displayMergedString() {
@@ -38,6 +50,13 @@
             g: parseInt(result[2], 16),
             b: parseInt(result[3], 16)
           } : null;
+        }
+        function mergeContent() {
+            var input1 = document.getElementById("ainput1").value;
+            var input2 = document.getElementById("ainput2").value;
+            var selectValue = document.getElementById("amySelect").value;
+            var result = input1 + " " + input2 + " " + selectValue;
+            document.getElementById("resulta").innerText = result;
         }
     </script>
 </body>
