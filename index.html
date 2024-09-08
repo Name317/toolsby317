@@ -18,11 +18,6 @@
     <code id="colorValues"></code>
     <hr>
     <script>
-        var inputVal = document.getElementById('myInput').value;
-        function getInputValue() {
-          inputVal = document.getElementById('myInput').value;
-          document.getElementById('colorValues').textContent = `https://name317.github.io/crunweb/?mode=text&text=${inputVal}&color=rgb(${rgb.r},${rgb.g},${rgb.b})`;
-        }
         document.getElementById('colorPicker').addEventListener('input', function() {
         var color = this.value;
         var rgb = {
@@ -32,6 +27,11 @@
         };
         document.getElementById('colorValues').textContent = `https://name317.github.io/crunweb/?mode=text&text=${inputVal}&color=rgb(${rgb.r},${rgb.g},${rgb.b})`;
         });
+        var inputVal = document.getElementById('myInput').value;
+        function getInputValue() {
+          inputVal = document.getElementById('myInput').value;
+          document.getElementById('colorValues').textContent = `https://name317.github.io/crunweb/?mode=text&text=${inputVal}&color=rgb(${rgb.r},${rgb.g},${rgb.b})`;
+        }
     </script>
 </body>
 </html>
