@@ -4,10 +4,37 @@
     <meta charset = "UTF-8">
     <title>三幺七的工具网站</title>
     <style>
+		input {
+    		background-color: #1469bd00;
+    		border: #aca9a97d solid 1px;
+    		color: black;
+			box-sizing: conte-box;
+		}
+		input:focus {
+    		border-style: solid;
+    		border-color: #03a9f4;
+    		box-shadow: 0 0 7px #03a9f4;
+    		outline: none;
+		}
         code {
             color: #c7254e;
             background-color: #f9f2f4;
         }
+		.selects{
+			background:rgba(0,0,0,0.15);
+			border-radius:10px;
+			border:none;
+			font-family:"Microsoft YaHei UI light";
+		}
+		button {
+			background-color: #123456;
+			border: none;    
+    		color: white;
+			text-align: center;
+			display: inline-block;
+			border-radius:8px;
+			font-size: 15px;
+    	}
     </style>
 </head>
 <body>
@@ -32,7 +59,7 @@
     <hr>
     <!-- 按钮 -->
     <h2>按钮控件</h2>
-    <select id="amySelect">
+    <select id="amySelect" class = "selects">
         <option value="alert">显示信息</option>
         <option value="jump">跳转网站</option>
     </select>
@@ -51,6 +78,22 @@
     <button onclick="mergeContent()">获取链接</button>
     <div id="resulta"></div>
     <hr>
+	<h2>简易网页制作</h2>
+    <select id="projectSelect" class = "selects">
+        <option value="buttoninfo">信息按钮&amp;信息</option>
+		<option value="buttonjump">跳转网页按钮&amp;跳转的网址</option>
+        <option value="bigsmall">大字&amp;小字</option>
+		<option value="smallinfo">小字&amp;注释</option>
+		<option value="picture">图片URL&amp;图片注释</option>
+		<option value="video">视频URL&amp;视频注释</option>
+        <!-- 更多项目选项 -->
+    </select>
+    <input type="text" id="input1" placeholder="内容1">
+    <input type="text" id="input2" placeholder="内容2">
+    <button id="addButton">添加项目</button>
+    <ul id="projectList">
+        <!-- 项目列表将在这里显示 -->
+    </ul>
     <!-- 所有代码 -->
     <script>
         function displayMergedString() {
@@ -75,6 +118,24 @@
             var result = 'https://name317.github.io/crunweb/?mode=button&name=' +  input1 + "&way=" + selectValue + "&to=" + input2;
             document.getElementById("resulta").innerText = result;
         }
+		document.addEventListener('DOMContentLoaded', function() {
+            var projectList = document.getElementById('projectList');
+            var addButton = document.getElementById('addButton');
+            var select = document.getElementById('projectSelect');
+            var input1 = document.getElementById('input1');
+            var input2 = document.getElementById('input2');
+
+            addButton.addEventListener('click', function() {
+                var option = select.options[select.selectedIndex].value;
+                var item = document.createElement('li');
+                item.innerHTML = `<span>${option}: ${input1.value}, ${input2.value}</span>
+                                  <button class="delete">删除</button>`;
+                item.querySelector('.delete').addEventListener('click', function() {
+                    projectList.removeChild(item);
+                });
+                projectList.appendChild(item);
+            });
+        });
     </script>
 </body>
 </html>
