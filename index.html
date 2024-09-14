@@ -86,8 +86,8 @@
 		<option value="smallinfo">小字&amp;注释</option>
 		<option value="picture">图片URL&amp;图片注释</option>
 		<option value="video">视频URL&amp;视频注释</option>
-        <!-- 更多项目选项 -->
     </select>
+  <select class = "selects" id="wvz"><option value="left">居左</option><option value="mid">居中</option><option value="right">居右</option></select>
     <input type="text" id="input1" placeholder="内容1">
     <input type="text" id="input2" placeholder="内容2">
     <button id="addButton">添加项目</button>
@@ -115,6 +115,7 @@
             var input1 = document.getElementById("ainput1").value;
             var input2 = document.getElementById("ainput2").value;
             var selectValue = document.getElementById("amySelect").value;
+			var vz = document.getElementById("wvz").value;
             var result = 'https://name317.github.io/crunweb/?mode=button&name=' +  input1 + "&way=" + selectValue + "&to=" + input2;
             document.getElementById("resulta").innerText = result;
         }
@@ -124,12 +125,12 @@
             var select = document.getElementById('projectSelect');
             var input1 = document.getElementById('input1');
             var input2 = document.getElementById('input2');
-
+	        var wz = document.getElementById('vz');
             addButton.addEventListener('click', function() {
                 var option = select.options[select.selectedIndex].value;
                 var item = document.createElement('li');
-                item.innerHTML = `<span>${option}: ${input1.value}, ${input2.value}</span>
-                                  <select class = "selects"><option value="left">居左</option><option value="mid">居中</option><option value="right">居右</option></select><button>删除</button>`;
+                item.innerHTML = `<span>${option}: ${input1.value}, ${input2.value} , ${wz.value}</span>
+                                  <button>删除</button>`;
                 item.querySelector('button').addEventListener('click', function() {
                     projectList.removeChild(item);
                 });
