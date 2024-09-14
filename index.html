@@ -129,7 +129,7 @@
             addButton.addEventListener('click', function() {
                 var option = select.options[select.selectedIndex].value;
                 var item = document.createElement('li');
-                item.innerHTML = `<span>${option}: ${input1.value}, ${input2.value} , ${wz.value}</span>
+                item.innerHTML = `<span>${option}: ${input1.value}, ${input2.value} , ${vz.value}</span>
                                   <button>删除</button>`;
                 item.querySelector('button').addEventListener('click', function() {
                     projectList.removeChild(item);
