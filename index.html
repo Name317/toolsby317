@@ -130,7 +130,7 @@
                 var item = document.createElement('li');
                 item.innerHTML = `<span>${option}: ${input1.value}, ${input2.value}</span>
                                   <select class = "selects"><option value="left">居左</option><option value="mid">居中</option><option value="right">居右</option></select><button>删除</button>`;
-                item.querySelector('.delete').addEventListener('click', function() {
+                item.querySelector('button').addEventListener('click', function() {
                     projectList.removeChild(item);
                 });
                 projectList.appendChild(item);
