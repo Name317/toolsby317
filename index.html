@@ -115,7 +115,6 @@
             var input1 = document.getElementById("ainput1").value;
             var input2 = document.getElementById("ainput2").value;
             var selectValue = document.getElementById("amySelect").value;
-			var vz = document.getElementById("wvz").value;
             var result = 'https://name317.github.io/crunweb/?mode=button&name=' +  input1 + "&way=" + selectValue + "&to=" + input2;
             document.getElementById("resulta").innerText = result;
         }
@@ -125,7 +124,7 @@
             var select = document.getElementById('projectSelect');
             var input1 = document.getElementById('input1');
             var input2 = document.getElementById('input2');
-	        var wz = document.getElementById('vz');
+	        var wz = document.getElementById('wvz');
             addButton.addEventListener('click', function() {
                 var option = select.options[select.selectedIndex].value;
 		    var wvz = wz.options[wz.selectedIndex].value;
