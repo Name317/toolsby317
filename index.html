@@ -87,7 +87,11 @@
 		<option value="picture">图片URL&amp;图片注释</option>
 		<option value="video">视频URL&amp;视频注释</option>
     </select>
-  <select class = "selects" id="wvz"><option value="left">居左</option><option value="mid">居中</option><option value="right">居右</option></select>
+  <select class = "selects" id="wvz">
+	  <option value="left">居左</option>
+	  <option value="mid">居中</option>
+	  <option value="right">居右</option>
+  </select>
     <input type="text" id="input1" placeholder="内容1">
     <input type="text" id="input2" placeholder="内容2">
     <button id="addButton">添加项目</button>
@@ -129,7 +133,7 @@
                 var option = select.options[select.selectedIndex].value;
 		    var wvz = wz.options[wz.selectedIndex].value;
                 var item = document.createElement('li');
-                item.innerHTML = `<span>${option}: ${input1.value}, ${input2.value} , ${wvz.value}</span>
+                item.innerHTML = `<span>${option}: ${input1.value}, ${input2.value} , ${wvz}</span>
                                   <button>删除</button>`;
                 item.querySelector('button').addEventListener('click', function() {
                     projectList.removeChild(item);
