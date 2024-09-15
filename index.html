@@ -143,15 +143,34 @@
             });
         });
 	function testry(){
+		var fni = '',cbi = '&cbi=',cbj = '&cbj=',cbs = '&cbs=',csi = '&csi=',cv = '&cv=',cp = '&cp=',weizhi = '&weizhi=';
 		var list = document.getElementById("projectList");
-			var items = list.getElementsByTagName("li");
-			var itemNames = "";
-			for (var i = 0; i < items.length; i++) {
-			var itemName = items[0].innerText;
-			itemNames += itemName + ",";
+		var items = list.getElementsByTagName("li");
+		var itemNames = "";
+		for (var i = 0; i < items.length; i++) {
+			var itemName = items[i].innerText.split(",");
+			fni = fni + itemName[0];
+			if (itemName[0] == 'buttoninfo'){
+				cbi = cbi + itemName[1] + itemName[2];
+			}
+			if (itemName[0] == 'buttonjump'){
+				cbj = cbj + itemName[1] + itemName[2];
+			}
+			if (itemName[0] == 'bigsmall'){
+				cbs = cbs + itemName[1] + itemName[2];
+			}
+			if (itemName[0] == 'smallinfo'){
+				csi = csi + itemName[1] + itemName[2];
+			}
+			if (itemName[0] == 'video'){
+				cv = cv + itemName[1] + itemName[2];
+			}
+			if (itemName[0] == 'picture'){
+				cp = cp + itemName[1] + itemName[2];
+			}
+			weizhi = weizhi + itemName[3];
 		}
-		var fni = '',cbi = '&cbi=',cbj = '&cbj=',cbs = '&cbs=',csi = '&csi=',cv = '&cv=',cp = '&cp=';
-		console.log('https://name317.github.io/?mode=pre&to=' + fni + cbi + cbj + cbs + csi + cv + cp);
+		console.log('https://name317.github.io/?mode=pre&to=' + fni + cbi + cbj + cbs + csi + cv + cp + weizhi);
 	}
     </script>
 </body>
