@@ -134,7 +134,7 @@
                 var option = select.options[select.selectedIndex].value;
 		    var wvz = wz.options[wz.selectedIndex].value;
                 var item = document.createElement('li');
-                item.innerHTML = `<span>${option}: ${input1.value}, ${input2.value} , ${wvz}</span>
+                item.innerHTML = `<span>${option},${input1.value},${input2.value},${wvz}</span>
                                   <button>删除</button>`;
                 item.querySelector('button').addEventListener('click', function() {
                     projectList.removeChild(item);
@@ -146,7 +146,7 @@
 var items = list.getElementsByTagName("li");
 var itemNames = "";
 for (var i = 0; i < items.length; i++) {
-	var itemName = items[i].textContent;
+	var itemName = items[0].innerText;
 	itemNames += itemName + ",";
 }
 console.log(itemNames);
