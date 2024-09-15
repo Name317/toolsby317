@@ -142,14 +142,16 @@
                 projectList.appendChild(item);
             });
         });
-	var list = document.getElementById("projectList");
-var items = list.getElementsByTagName("li");
-var itemNames = "";
-for (var i = 0; i < items.length; i++) {
-	var itemName = items[0].innerText;
-	itemNames += itemName + ",";
-}
-console.log(itemNames);
+	function testry(){
+		var list = document.getElementById("projectList");
+			var items = list.getElementsByTagName("li");
+			var itemNames = "";
+			for (var i = 0; i < items.length; i++) {
+			var itemName = items[0].innerText;
+			itemNames += itemName + ",";
+		}
+		console.log(itemNames);
+	}
     </script>
 </body>
 </html>
