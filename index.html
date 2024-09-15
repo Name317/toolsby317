@@ -143,7 +143,7 @@
             });
         });
 	function testry(){
-		var fni = '',cbi = '&cbi=',cbj = '&cbj=',cbs = '&cbs=',csi = '&csi=',cv = '&cv=',cp = '&cp=',weizhi = '&weizhi=';
+		var fni = '',obi = 0,obj = 0,obs = 0,osi = 0,ov = 0,op = 0,cbi = '&cbi=',cbj = '&cbj=',cbs = '&cbs=',csi = '&csi=',cv = '&cv=',cp = '&cp=',weizhi = '&weizhi=';
 		var list = document.getElementById("projectList");
 		var items = list.getElementsByTagName("li");
 		var itemNames = "";
@@ -152,21 +152,27 @@
 			fni = fni + itemName[0] + ',';
 			if (itemName[0] == 'buttoninfo'){
 				cbi = cbi + itemName[1] + ',' + itemName[2] + ',';
+				obi++;
 			}
 			if (itemName[0] == 'buttonjump'){
 				cbj = cbj + itemName[1] + ',' + itemName[2] + ',';
+				obj++;
 			}
 			if (itemName[0] == 'bigsmall'){
 				cbs = cbs + itemName[1] + ',' + itemName[2] + ',';
+				obs++;
 			}
 			if (itemName[0] == 'smallinfo'){
 				csi = csi + itemName[1] + ',' + itemName[2] + ',';
+				osi++;
 			}
 			if (itemName[0] == 'video'){
 				cv = cv + itemName[1] + ',' + itemName[2] + ',';
+				ov++;
 			}
 			if (itemName[0] == 'picture'){
 				cp = cp + itemName[1] + ',' + itemName[2] + ',';
+				op++;
 			}
 			weizhi = weizhi + itemName[3] + ',';
 		}
