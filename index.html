@@ -149,26 +149,26 @@
 		var itemNames = "";
 		for (var i = 0; i < items.length; i++) {
 			var itemName = items[i].innerText.split(",");
-			fni = fni + itemName[0];
+			fni = fni + itemName[0] + ',';
 			if (itemName[0] == 'buttoninfo'){
-				cbi = cbi + itemName[1] + itemName[2];
+				cbi = cbi + itemName[1] + ',' + itemName[2] + ',';
 			}
 			if (itemName[0] == 'buttonjump'){
-				cbj = cbj + itemName[1] + itemName[2];
+				cbj = cbj + itemName[1] + ',' + itemName[2] + ',';
 			}
 			if (itemName[0] == 'bigsmall'){
-				cbs = cbs + itemName[1] + itemName[2];
+				cbs = cbs + itemName[1] + ',' + itemName[2] + ',';
 			}
 			if (itemName[0] == 'smallinfo'){
-				csi = csi + itemName[1] + itemName[2];
+				csi = csi + itemName[1] + ',' + itemName[2] + ',';
 			}
 			if (itemName[0] == 'video'){
-				cv = cv + itemName[1] + itemName[2];
+				cv = cv + itemName[1] + ',' + itemName[2] + ',';
 			}
 			if (itemName[0] == 'picture'){
-				cp = cp + itemName[1] + itemName[2];
+				cp = cp + itemName[1] + ',' + itemName[2] + ',';
 			}
-			weizhi = weizhi + itemName[3];
+			weizhi = weizhi + itemName[3] + ',';
 		}
 		console.log('https://name317.github.io/crunweb/?mode=pre&to=' + fni + cbi + cbj + cbs + csi + cv + cp + weizhi);
 	}
