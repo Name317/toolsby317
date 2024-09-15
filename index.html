@@ -100,7 +100,7 @@
         <!-- 项目列表将在这里显示 -->
     </ol>
     <button onclick = "testry()">生成网址</button>
-    <span id = 'movd'></span>
+    <div id = 'movd'></div>
     <!-- 所有代码 -->
     <script>
         function displayMergedString() {
@@ -179,7 +179,7 @@
 			weizhi = weizhi + itemName[3].split(" ")[0] + ',';
 		}
 		console.log('https://name317.github.io/crunweb/?mode=pre&to=' + fni + (obi > 0 ? cbi : '') + (obj > 0 ? cbj : '') + (obs > 0 ? cbs : '') + (osi > 0 ? csi : '') + (ov > 0 ? cv : '') + (op > 0 ? cp : '') + weizhi);
-		document.getElementById("movd") = ('https://name317.github.io/crunweb/?mode=pre&to=' + fni + (obi > 0 ? cbi : '') + (obj > 0 ? cbj : '') + (obs > 0 ? cbs : '') + (osi > 0 ? csi : '') + (ov > 0 ? cv : '') + (op > 0 ? cp : '') + weizhi);
+		document.getElementById("movd").textContent = ('https://name317.github.io/crunweb/?mode=pre&to=' + fni + (obi > 0 ? cbi : '') + (obj > 0 ? cbj : '') + (obs > 0 ? cbs : '') + (osi > 0 ? csi : '') + (ov > 0 ? cv : '') + (op > 0 ? cp : '') + weizhi);
 	}
     </script>
 </body>
