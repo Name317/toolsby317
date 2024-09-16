@@ -78,6 +78,12 @@
     <button onclick="mergeContent()">获取链接</button>
     <div id="resulta"></div>
     <hr>
+	<h2>html代码显示</h2>
+	<input type = "text" id = "mhoal" placeholder = "HTML代码（单行）">
+	<br>
+	<button onclick = "gethtmlcodel()">获取网址</button>
+	<div id = "relhtmlel"></div>
+	<hr>
 	<h2>简易网页制作</h2>
     <select id="projectSelect" class = "selects">
         <option value="buttoninfo">信息按钮&amp;信息</option>
@@ -103,6 +109,10 @@
     <div id = 'movd'></div>
     <!-- 所有代码 -->
     <script>
+		function gethtmlcodel(){
+			var fundo = document.getElementById('mhoal').value;
+			document.getElementById('relhtmlel').textContext = "https://name317.github.io/crunweb?mode=html&to=" + fundo;
+		}
         function displayMergedString() {
           var colorPicker = document.getElementById('colorPicker').value;
           var textInput = document.getElementById('textInput').value;
