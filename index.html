@@ -44,6 +44,18 @@
     <hr>
     <em>注：所有输入框中都不能含有</em> <code>&nbsp;#&ensp;?&ensp;&&ensp;,&ensp;=&nbsp;</code><em>。</em>
     <hr>
+	<!-- 取色 -->
+    <h2>取色</h2>
+    <strong>取色并转换成颜色代码：</strong>
+    <br>
+    <input type="color" id="CP1">
+    <br>
+	<button onclick="DMS()">获取转换后的颜色代码</button>
+	<br>
+    <br>
+    <strong>颜色：</strong>
+    <div id="result"></div>
+    <hr>
     <!-- 显示彩色字 -->
     <h2>显示彩色字</h2>
     <strong>内容：</strong>
@@ -119,6 +131,12 @@
 			var fundo = document.getElementById('mhoal').value;
 			document.getElementById('relhtmlel').textContext = "https://name317.github.io/crunweb?mode=html&to=" + fundo;
 		}
+		function DMS() {
+          var colorPicker = document.getElementById('CP1').value;
+          var rgb = hexToRgb(colorPicker);
+          var mergedString = `rgb(${rgb.r},${rgb.g},${rgb.b})`;
+          document.getElementById('result').textContent = '十六进制RGB颜色代码：' + colorPicker + '\n' + '另RGB颜色代码：' + mergedString;
+        }
         function displayMergedString() {
           var colorPicker = document.getElementById('colorPicker').value;
           var textInput = document.getElementById('textInput').value;
