@@ -137,7 +137,7 @@
           var colorPicker = document.getElementById('CP1').value;
           var rgb = hexToRgb(colorPicker);
           var mergedString = `rgb(${rgb.r},${rgb.g},${rgb.b})`;
-          document.getElementById('relt').innerHTML = '十六进制RGB颜色代码：' + colorPicker + "\n另RGB颜色代码：" + mergedString;
+          document.getElementById('relt').innerHTML = '十六进制RGB颜色代码：' + colorPicker + '<br>' + '另RGB颜色代码：' + mergedString;
         }
         function displayMergedString() {
           var colorPicker = document.getElementById('colorPicker').value;
