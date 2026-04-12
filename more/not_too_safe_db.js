@@ -1,10 +1,18 @@
 //XMLHTTPRequest On TinyWebDB Test.
 //Just a template.
+user = 'share'
+secret = 'everyone'
+function setuser(now){
+	user = now
+}
+function setsecret(now){
+	secret = now
+}
 function apt(tin,wm){
 	return '&' + tin + '=' + wm;
 }
 function apd(act){
-	var yon = 'https://tinywebdb.appinventor.space/api?user=turbo317&secret=bb6dc299&action=' + act;
+	var yon = 'https://tinywebdb.appinventor.space/api?user=' + user + '&secret=' + secret + '&action=' + act;
 	return yon;
 }
 function pt(o,...args){
